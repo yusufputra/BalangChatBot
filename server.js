@@ -24,6 +24,10 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
 const axios = require('axios');
+const options = require('./connectionMysql');
+const router = express.Router();
+
+var knex = require('knex')(options);
  
 const config = {
   channelAccessToken: "9q1vjHNqSV1wTBV+tiFMFeee1vhzpngxISCHGxvp0dNzmuIXFREOmoh4+ovBP85R1KHHpfK0FyBbtRBkJLmHhv7I4pvzDtdtkAYNa8FJk7bGEcvMfGoVtwcYKezrUJvVdOYuWmdnpSxZ+sg8cbcqhwdB04t89/1O/w1cDnyilFU=",
