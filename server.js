@@ -65,15 +65,7 @@ app.get('/',(req,res)=>{
 function handleEvent(event) {
    
     if(event.message.text == "hai"){
-      // const echo = { type: 'text', text: "Halo juga :)·" };
-      // return client.replyMessage(event.replyToken, echo);
-      const query= "Select * from daftarBarang"
-      console.log(query);
-      knex.schema.raw(query).then(ress=>{
-          const echo = event.json(ress);
-      }).catch(err=>{
-          const echo = event.status(404).json(err);
-      })
+      const echo = { type: 'text', text: "Halo juga :)·" };
       return client.replyMessage(event.replyToken, echo);
     }
   
