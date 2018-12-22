@@ -41,7 +41,7 @@ const client = new line.Client(config);
 const app = express();
 
 app.use(volleyball);
-app.use(express.json());
+// app.use(express.json());
 app.use('/api',api);
 
 // register a webhook handler with middleware
@@ -61,9 +61,9 @@ app.get('/',(req,res)=>{
 })
  
 function handleEvent(event) {
- 
+   
     if(event.message.text == "hai"){
-      const echo = { type: 'text', text: "Halo juga :)·" };
+      const echo = $.get("https://butter-mail.glitch.me/api/barang");
       return client.replyMessage(event.replyToken, echo);
     }
   
