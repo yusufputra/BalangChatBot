@@ -24,6 +24,8 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
 const axios = require('axios');
+const options = require('./db/connectionAzure');
+var knex = require('knex')(options);
 
 
 const volleyball = require('volleyball');
@@ -63,7 +65,15 @@ app.get('/',(req,res)=>{
 function handleEvent(event) {
    
     if(event.message.text == "hai"){
-      const echo = $.get("https://butter-mail.glitch.me/api/barang");
+      // const echo = { type: 'text', text: "Halo juga :)·" };
+      // return client.replyMessage(event.replyToken, echo);
+      const query= "Select * from daftarBarang"
+      console.log(query);
+      knex.schema.raw(query).then(ress=>{
+          const echo = event.json(ress);
+      }).catch(err=>{
+          const echo = event.status(404).json(err);
+      })
       return client.replyMessage(event.replyToken, echo);
     }
   
