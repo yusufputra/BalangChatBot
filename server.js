@@ -24,7 +24,7 @@
 const line = require('@line/bot-sdk');
 const express = require('express');
 const axios = require('axios');
-const options = require('./connectionMysql');
+const options = require('connectionMysql');
 const router = express.Router();
 
 var knex = require('knex')(options);
