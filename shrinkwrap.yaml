@@ -5,8 +5,9 @@ dependencies:
   dotenv: 6.2.0
   express: 4.16.4
   knex: 0.16.3
-  mssql: 4.3.0
+  mssql: 4.1.0
   mysql: 2.16.0
+  tedious: 3.0.1
   volleyball: 1.5.1
 packages:
   /@babel/polyfill/7.2.5:
@@ -171,6 +172,12 @@ packages:
       node: '>= 0.4.x'
     resolution:
       integrity: sha1-rHMCDApZu3nrF8LOLbd/d9l04BM=
+  /big-number/1.0.0:
+    dev: false
+    engines:
+      node: '>= 0.10.x'
+    resolution:
+      integrity: sha512-cHUzdT+mMXd1ozht8n5ZwBlNiPO/4zCqqkyp3lF1TMPsRJLXUbQ7cKnfXRkrW475H5SOtSOP0HFeihNbpa53MQ==
   /bignumber.js/4.1.0:
     dev: false
     resolution:
@@ -182,6 +189,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-e8tQYnZodmebYDWGH7KMRvtzKXaJHx3BbilrgZCfvyLUYdKpK1t5PSPmpkny/SgiTSCnjfLW7v5rlONXVFkQEA==
+  /bl/2.1.2:
+    dependencies:
+      readable-stream: 2.3.6
+      safe-buffer: 5.1.2
+    dev: false
+    resolution:
+      integrity: sha512-DvC0x+PxmSJNx8wXoFV15pC2+GOJ3ohb4F1REq3X32a2Z3nEBpR1Guu740M7ouYAImFj4BXDNilLNZbygtG9lQ==
   /bluebird/3.5.3:
     dev: false
     resolution:
@@ -1103,9 +1117,9 @@ packages:
     dev: false
     resolution:
       integrity: sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg==
-  /mssql/4.3.0:
+  /mssql/4.1.0:
     dependencies:
-      debug: 3.2.6
+      debug: 2.6.9
       generic-pool: 3.4.2
       tedious: 2.7.1
     dev: false
@@ -1113,7 +1127,7 @@ packages:
       node: '>=4'
     hasBin: true
     resolution:
-      integrity: sha512-MpSwdLMbKfFL3DwjhgbJdFViU+ye9YR+op/t/CdhWwYdA90qWYjPyWbIzso/2xRfm7liYNkN5EZjAS9PWFLLZg==
+      integrity: sha512-ekht0eILEV0P1CbpkwpAxhgO+/5goYizUJrt7pgDm3fP6lGKe0+8V9jhTvQZ8DPHkycSd0wYGUoz/YA7VN7kQQ==
   /mysql/2.16.0:
     dependencies:
       bignumber.js: 4.1.0
@@ -1333,6 +1347,16 @@ packages:
     dev: false
     resolution:
       integrity: sha512-tQtKA9WIAhBF3+VLAseyMqZeBjW0AHJoxOtYqSUZNJxauErmLbVm2FW1y+J/YA9dUrAC39ITejlZWhVIwawkKw==
+  /readable-stream/3.1.0:
+    dependencies:
+      inherits: 2.0.3
+      string_decoder: 1.2.0
+      util-deprecate: 1.0.2
+    dev: false
+    engines:
+      node: '>= 6'
+    resolution:
+      integrity: sha512-vpydAvIJvPODZNagCPuHG87O9JNPtvFEtjHHRVwNVsVVRBqemvPJkc2SYbxJsiZXawJdtZNmkmnsPuE3IgsG0A==
   /rechoir/0.6.2:
     dependencies:
       resolve: 1.9.0
@@ -1564,6 +1588,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg==
+  /string_decoder/1.2.0:
+    dependencies:
+      safe-buffer: 5.1.2
+    dev: false
+    resolution:
+      integrity: sha512-6YqyX6ZWEYguAxgZzHGL7SsCeGx3V2TtOTqZz1xSTSWnqsbWwbptafNyvf/ACquZUXV3DANr5BDIwNYe1mN42w==
   /supports-color/5.5.0:
     dependencies:
       has-flag: 3.0.0
@@ -1594,6 +1624,21 @@ packages:
       node: '>= 4'
     resolution:
       integrity: sha512-u3ciATGm5byim91b3+c3MVTvY1zKjDmhUhnBQZXKymT2Vb9w322dziPQY6MhBNyBEcNONPsAMR+7/Uub7NYABQ==
+  /tedious/3.0.1:
+    dependencies:
+      big-number: 1.0.0
+      bl: 2.1.2
+      depd: 1.1.2
+      iconv-lite: 0.4.24
+      native-duplexpair: 1.0.0
+      punycode: 2.1.1
+      readable-stream: 3.1.0
+      sprintf-js: 1.1.2
+    dev: false
+    engines:
+      node: '>= 6'
+    resolution:
+      integrity: sha512-Uugv3CPH1LpYijyBS9qZb0g8k3WYM5EPoZOfYmTj/ubc3/oyXvY2KmR17IUtmLJcGpGDaU3VygYzcihPlGSUug==
   /tildify/1.2.0:
     dependencies:
       os-homedir: 1.0.2
@@ -1737,6 +1782,7 @@ specifiers:
   dotenv: ^6.2.0
   express: ^4.16.4
   knex: ^0.16.3
-  mssql: ^4.3.0
+  mssql: ^4.1.0
   mysql: ^2.16.0
+  tedious: ^3.0.1
   volleyball: ^1.5.1
