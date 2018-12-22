@@ -4,6 +4,7 @@ dependencies:
   cors: 2.8.5
   express: 4.16.4
   knex: 0.16.3
+  mssql: 4.3.0
   mysql: 2.16.0
 packages:
   /@babel/polyfill/7.2.5:
@@ -141,6 +142,13 @@ packages:
     dev: false
     resolution:
       integrity: sha1-MtU+SFHv3AoRmTts0AB4nXDAUQI=
+  /babel-runtime/6.26.0:
+    dependencies:
+      core-js: 2.6.1
+      regenerator-runtime: 0.11.1
+    dev: false
+    resolution:
+      integrity: sha1-llxwWGaOgrVde/4E/yM3vItWR/4=
   /base/0.11.2:
     dependencies:
       cache-base: 1.0.1
@@ -155,10 +163,23 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-5T6P4xPgpp0YDFvSWwEZ4NoE3aM4QBQXDzmVbraCkFj8zHM+mba8SyqB5DbZWyR7mYHo6Y7BdQo3MoA4m0TeQg==
+  /big-number/0.3.1:
+    dev: false
+    engines:
+      node: '>= 0.4.x'
+    resolution:
+      integrity: sha1-rHMCDApZu3nrF8LOLbd/d9l04BM=
   /bignumber.js/4.1.0:
     dev: false
     resolution:
       integrity: sha512-eJzYkFYy9L4JzXsbymsFn3p54D+llV27oTQ+ziJG7WFRheJcNZilgVXMG0LoZtlQSKBsJdWtLFqOD0u+U0jZKA==
+  /bl/1.2.2:
+    dependencies:
+      readable-stream: 2.3.6
+      safe-buffer: 5.1.2
+    dev: false
+    resolution:
+      integrity: sha512-e8tQYnZodmebYDWGH7KMRvtzKXaJHx3BbilrgZCfvyLUYdKpK1t5PSPmpkny/SgiTSCnjfLW7v5rlONXVFkQEA==
   /bluebird/3.5.3:
     dev: false
     resolution:
@@ -324,6 +345,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
+  /debug/3.2.6:
+    dependencies:
+      ms: 2.1.1
+    dev: false
+    resolution:
+      integrity: sha512-mel+jf7nrtEl5Pn1Qx46zARXKDpBbvzezse7p7LqINmdoIk8PYP5SySaxEmYv6TZ0JyEKA1hsCId6DIhgITtWQ==
   /debug/4.1.0:
     dependencies:
       ms: 2.1.1
@@ -600,6 +627,12 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=
+  /generic-pool/3.4.2:
+    dev: false
+    engines:
+      node: '>= 4'
+    resolution:
+      integrity: sha512-H7cUpwCQSiJmAHM4c/aFu6fUfrhWXW1ncyh8ftxEPMu6AiYkHw9K8br720TGPZJbk5eOH2bynjZD1yPvdDAmag==
   /get-value/2.0.6:
     dev: false
     engines:
@@ -696,6 +729,14 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-neyTUVFtahjf0mB3dZT77u+8O0QB89jFdnBkd5P1JgYPbPaia3gXXOVL2fq8VyU2gMMD7SaN7QukTB/pmXYvDA==
+  /iconv-lite/0.4.24:
+    dependencies:
+      safer-buffer: 2.1.2
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==
   /inherits/2.0.3:
     dev: false
     resolution:
@@ -1048,6 +1089,17 @@ packages:
     dev: false
     resolution:
       integrity: sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg==
+  /mssql/4.3.0:
+    dependencies:
+      debug: 3.2.6
+      generic-pool: 3.4.2
+      tedious: 2.7.1
+    dev: false
+    engines:
+      node: '>=4'
+    hasBin: true
+    resolution:
+      integrity: sha512-MpSwdLMbKfFL3DwjhgbJdFViU+ye9YR+op/t/CdhWwYdA90qWYjPyWbIzso/2xRfm7liYNkN5EZjAS9PWFLLZg==
   /mysql/2.16.0:
     dependencies:
       bignumber.js: 4.1.0
@@ -1077,6 +1129,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-fpoe2T0RbHwBTBUOftAfBPaDEi06ufaUai0mE6Yn1kacc3SnTErfb/h+X94VXzI64rKFHYImXSvdwGGCmwOqCA==
+  /native-duplexpair/1.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-eJkHjmS/PIo9cyYBs9QP8F21j6A=
   /negotiator/0.6.1:
     dev: false
     engines:
@@ -1222,6 +1278,12 @@ packages:
       node: '>= 0.10'
     resolution:
       integrity: sha512-5erio2h9jp5CHGwcybmxmVqHmnCBZeewlfJ0pex+UW7Qny7OOZXTtH56TGNyBizkgiOwhJtMKrVzDTeKcySZwA==
+  /punycode/2.1.1:
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
   /qs/6.5.2:
     dev: false
     engines:
@@ -1265,6 +1327,10 @@ packages:
       node: '>= 0.10'
     resolution:
       integrity: sha1-hSBLVNuoLVdC4oyWdW70OvUOM4Q=
+  /regenerator-runtime/0.11.1:
+    dev: false
+    resolution:
+      integrity: sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==
   /regenerator-runtime/0.12.1:
     dev: false
     resolution:
@@ -1447,6 +1513,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-NzNVhJDYpwceVVii8/Hu6DKfD2G+NrQHlS/V/qgv763EYudVwEcMQNxd2lh+0VrUByXN/oJkl5grOhYWvQUYiw==
+  /sprintf-js/1.1.2:
+    dev: false
+    resolution:
+      integrity: sha512-VE0SOVEHCk7Qc8ulkWw3ntAzXuqf7S2lvwQaDLRnUeIEaKNQJzV6BwmLKhOqT61aGhfUMrXeaBk+oDGCzvhcug==
   /sqlstring/2.3.1:
     dev: false
     engines:
@@ -1494,6 +1564,22 @@ packages:
       node: '>=4.0.0'
     resolution:
       integrity: sha512-j4samMCQCP5+6Il9/cxCqBd3x4vvlLeVdoyGex0KixPKl4F8LpNbDSC6NDhjianZgUngElRr9UI1ryZqJDhwGg==
+  /tedious/2.7.1:
+    dependencies:
+      babel-runtime: 6.26.0
+      big-number: 0.3.1
+      bl: 1.2.2
+      depd: 1.1.2
+      iconv-lite: 0.4.24
+      native-duplexpair: 1.0.0
+      punycode: 2.1.1
+      readable-stream: 2.3.6
+      sprintf-js: 1.1.2
+    dev: false
+    engines:
+      node: '>= 4'
+    resolution:
+      integrity: sha512-u3ciATGm5byim91b3+c3MVTvY1zKjDmhUhnBQZXKymT2Vb9w322dziPQY6MhBNyBEcNONPsAMR+7/Uub7NYABQ==
   /tildify/1.2.0:
     dependencies:
       os-homedir: 1.0.2
@@ -1626,4 +1712,5 @@ specifiers:
   cors: ^2.8.5
   express: ^4.16.4
   knex: ^0.16.3
+  mssql: ^4.3.0
   mysql: ^2.16.0
