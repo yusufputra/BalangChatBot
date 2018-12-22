@@ -27,7 +27,7 @@ const axios = require('axios');
  
 const config = {
   channelAccessToken: "9q1vjHNqSV1wTBV+tiFMFeee1vhzpngxISCHGxvp0dNzmuIXFREOmoh4+ovBP85R1KHHpfK0FyBbtRBkJLmHhv7I4pvzDtdtkAYNa8FJk7bGEcvMfGoVtwcYKezrUJvVdOYuWmdnpSxZ+sg8cbcqhwdB04t89/1O/w1cDnyilFU=",
-  channelSecret: "56e65e8cba9dca267c064ff0dff3ef6e",
+  channelSecret: "a78543731191c3bafe74f95bf9739a8b",
 };
  
 // create LINE SDK client
@@ -45,11 +45,20 @@ app.post('/callback', line.middleware(config), (req, res) => {
     });
  
 });
+
+app.get('/',(req,res)=>{
+    res.json("halooo")
+})
  
 function handleEvent(event) {
  
     if(event.message.text == "hai"){
       const echo = { type: 'text', text: "Halo juga :)·" };
+      return client.replyMessage(event.replyToken, echo);
+    }
+  
+    if(event.message.text == "sayang kamu"){
+      const echo = { type: 'text', text: "sayang kamu juga :)·" };
       return client.replyMessage(event.replyToken, echo);
     }
  
