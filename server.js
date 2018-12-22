@@ -25,11 +25,10 @@ const line = require('@line/bot-sdk');
 const express = require('express');
 const axios = require('axios');
 
+
 const volleyball = require('volleyball');
-const cors = require('cors');
 require('dotenv').config();
 const api = require('./api/balang');
-
  
 const config = {
   channelAccessToken: "9q1vjHNqSV1wTBV+tiFMFeee1vhzpngxISCHGxvp0dNzmuIXFREOmoh4+ovBP85R1KHHpfK0FyBbtRBkJLmHhv7I4pvzDtdtkAYNa8FJk7bGEcvMfGoVtwcYKezrUJvVdOYuWmdnpSxZ+sg8cbcqhwdB04t89/1O/w1cDnyilFU=",
@@ -40,9 +39,8 @@ const config = {
 const client = new line.Client(config);
 const app = express();
 
-
 app.use(volleyball);
- 
+
 // register a webhook handler with middleware
 // about the middleware, please refer to doc
 app.post('/callback', line.middleware(config), (req, res) => {
