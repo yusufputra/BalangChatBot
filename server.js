@@ -52,7 +52,7 @@ function handleEvent(event) {
       ]);
     }else if(event.message.text == "barang"){
       let echo = "Daftar Barang\n==============";
-      axios.get('https://butter-mail.glitch.me/api/barang').then(function(res){
+      axios.get('https://pinto-planarian.glitch.me/api/barang').then(function(res){
         res.data.map(function(result){
           echo += "\nNama Barang : " + result.nama + "\n" +"Pemilik Barang : " + result.pemilik + "\n" +"Lokasi Barang : " + result.lokasiBarang+  "\n--------------";
         }).join('');
@@ -94,7 +94,7 @@ function handleEvent(event) {
       //   return client.replyMessage(event.replyToken, echo);
       // });
       
-      fetch ('https://butter-mail.glitch.me/api/postBarang',parser,{
+      fetch ('https://pinto-planarian.glitch.me/api/postBarang',parser,{
       method: 'POST',
       headers:{
         'content-type':'application/json',
@@ -113,7 +113,7 @@ function handleEvent(event) {
         return client.replyMessage(event.replyToken, echo);
       });
     }).catch(error=>{
-      // console.log('fetch error'+error)
+      console.log('fetch error'+error)
       // this.setState({ errorMessage: error.message });
       // this.setState({login:false})
         console.log("error2");
