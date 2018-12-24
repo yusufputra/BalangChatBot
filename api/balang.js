@@ -17,15 +17,15 @@ router.get('/barang',(req,res,next)=>{
 
 
 router.post('/postBarang',(req,res,next)=>{
-  console.log(req.body.nama);
-  let query = "insert into daftarBarang (nama, pemilik, lokasiBarang) values ('"+req.body.nama+"','"+req.body.pemilik+"','"+req.body.lokasiBarang+"')";
-  console.log(query);
-  knex.schema.raw(query).then(ress=>{
-      res.json('Berhasil dimasukkan');
-  }).catch(err=>{
-      res.status(400);
-      res.json(err);
-  })
+  console.log(req);
+  // let query = "insert into daftarBarang (nama, pemilik, lokasiBarang) values ('"+req.body.nama+"','"+req.body.pemilik+"','"+req.body.lokasiBarang+"')";
+  // console.log(query);
+  // knex.schema.raw(query).then(ress=>{
+  //     res.json('Berhasil dimasukkan');
+  // }).catch(err=>{
+  //     res.status(400);
+  //     res.json(err);
+  // })
 })
 
 module.exports = router;

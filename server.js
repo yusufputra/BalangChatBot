@@ -23,6 +23,7 @@
 
 const line = require('@line/bot-sdk');
 const express = require('express');
+const bodyParser     =        require("body-parser");
 const axios = require('axios');
 const options = require('./db/connectionAzure');
 var knex = require('knex')(options);
