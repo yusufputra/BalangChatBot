@@ -22,7 +22,7 @@ const client = new line.Client(config);
 const app = express();
 // const parser = express.json();
 
-app.use(express.json());
+// app.use(express.json());
 app.use(volleyball);
 app.use('/api',api);
 
@@ -30,6 +30,7 @@ app.use('/api',api);
 // register a webhook handler with middleware
 // about the middleware, please refer to doc
 app.post('/callback', line.middleware(config), (req, res) => {
+  console.log(res);
   Promise
     .all(req.body.events.map(handleEvent))
     .then((result) => res.json(result))
@@ -96,7 +97,7 @@ function handleEvent(event) {
       //   return client.replyMessage(event.replyToken, echo);
       // });
       
-      fetch ('https://pinto-planarian.glitch.me/api/postBarang',parser,{
+      fetch ('https://pinto-planarian.glitch.me/api/postBarang',{
       method: 'POST',
       headers:{
         'content-type':'application/json',
