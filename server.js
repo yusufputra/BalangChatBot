@@ -76,7 +76,7 @@ function handleEvent(event) {
       // {"id":1,"nama":"tas","pemilik":"supri","lokasiBarang":"bem"}
       axios.get('https://butter-mail.glitch.me/api/barang').then(function(res){
         res.data.map(function(result){
-          echo += "Nama Barang : " + result.nama + "\n" +"Pemilik Barang : " + result.pemilik + "\n" +"Lokasi Barang : " + result.lokasiBarang+  "\n";
+          echo += "\nNama Barang : " + result.nama + "\n" +"Pemilik Barang : " + result.pemilik + "\n" +"Lokasi Barang : " + result.lokasiBarang+  "\n--------------";
         }).join('');
         return client.replyMessage(event.replyToken,[
             Line.createText(echo),
