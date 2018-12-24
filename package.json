@@ -12,12 +12,27 @@
   "dependencies": {
     "@line/bot-sdk": "^6.4.0",
     "axios": "^0.18.0",
+<<<<<<< HEAD
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "knex": "^0.16.3",
     "messaging-api-line": "^0.7.15",
     "mssql": "^4.1.0",
     "node-fetch": "^2.3.0",
+=======
+<<<<<<< HEAD
+    "body-parser": "^1.18.3",
+=======
+>>>>>>> 53e684438104c3f2abb0469bc15f14ce74a3e553
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "knex": "^0.16.3",
+    "messaging-api-line": "^0.7.15",
+    "mssql": "^4.1.0",
+    "mysql": "^2.16.0",
+>>>>>>> 5a73cfbfb7e4133a80a283e72c8f8489490edd08
     "tedious": "^3.0.1",
     "volleyball": "^1.5.1"
   },
