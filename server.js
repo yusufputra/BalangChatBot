@@ -68,8 +68,17 @@ function handleEvent(event) {
       const echo = { type: 'text', text: "Halo juga :)·" };
       return client.replyMessage(event.replyToken, echo);
     }
+  
     if(event.message.text == "barang"){
-      axios.get('/api/barang')
+      let echo;
+      axios.get('https://butter-mail.glitch.me/api/barang').then(function(res){
+        console.log("hallo");
+        console.log(res);
+        return client.replyMessage(event.replyToken, res);
+      }).catch(function(err){
+        console.log("error");
+        console.log(err);
+      })
     }
   
     if(event.message.text == "sayang kamu"){
