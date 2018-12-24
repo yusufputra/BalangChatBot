@@ -71,33 +71,30 @@ function handleEvent(event) {
         Line.createText('Hello'),
         Line.createText('End'),
       ]);
-    }
-  
-    if(event.message.text == "barang"){
-      let echo;
+    }else if(event.message.text == "barang"){
+      let echo = "Daftar Barang\n==============";
       // {"id":1,"nama":"tas","pemilik":"supri","lokasiBarang":"bem"}
       axios.get('https://butter-mail.glitch.me/api/barang').then(function(res){
         res.data.map(function(result){
-          return client.replyMessage(event.replyToken,[
-            Line.createText(result.nama + result.pemilik + result.lokasiBarang),
+          echo += "Nama Barang : " + result.nama + "\n" +"Pemilik Barang : " + result.pemilik + "\n" +"Lokasi Barang : " + result.lokasiBarang+  "\n";
+        }).join('');
+        return client.replyMessage(event.replyToken,[
+            Line.createText(echo),
           ]);
-        })
-        console.log("hallo");
-        console.log(res);
-        return client.replyMessage(event.replyToken, res);
+        // console.log("hallo");
+        // console.log(res);
+        // return client.replyMessage(event.replyToken, res);
       }).catch(function(err){
         console.log("error");
         console.log(err);
       })
-    }
-  
-    if(event.message.text == "sayang kamu"){
+    }else if(event.message.text == "sayang kamu"){
       const echo = { type: 'text', text: "sayang kamu juga :)·" };
       return client.replyMessage(event.replyToken, echo);
+    }else{
+      const echo = { type: 'text', text: "Saya tidak mengerti, saya simpan dulu" };
+      return client.replyMessage(event.replyToken, echo);
     }
- 
-    const echo = { type: 'text', text: "Saya tidak mengerti, saya simpan dulu" };
-    return client.replyMessage(event.replyToken, echo);
 }
  
 // listen on port
