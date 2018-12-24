@@ -20,10 +20,12 @@ const config = {
 // create LINE SDK client
 const client = new line.Client(config);
 const app = express();
-const parser = express.json();
+// const parser = express.json();
 
+app.use(express.json());
 app.use(volleyball);
 app.use('/api',api);
+
 
 // register a webhook handler with middleware
 // about the middleware, please refer to doc
@@ -71,9 +73,9 @@ function handleEvent(event) {
       let statement = event.message.text.split(" ");
       let data = statement[1].split("/");
       const body = {
-        nama : data[0],
-        pemilik : data[1],
-        lokasiBarang : data[2]
+        "nama" : data[0],
+        "pemilik" : data[1],
+        "lokasiBarang" : data[2]
       }
       // console.log(body);
       // axios.post('https://butter-mail.glitch.me/api/postBarang',parser, {
@@ -99,7 +101,7 @@ function handleEvent(event) {
       headers:{
         'content-type':'application/json',
       },
-      body:JSON.stringify(body),
+      body:body
     }).then(response=>{
       if(response.ok){
         const echo = { type: 'text', text: "saved" };
@@ -113,6 +115,7 @@ function handleEvent(event) {
         return client.replyMessage(event.replyToken, echo);
       });
     }).catch(error=>{
+        console.log(body)
       console.log('fetch error'+error)
       // this.setState({ errorMessage: error.message });
       // this.setState({login:false})

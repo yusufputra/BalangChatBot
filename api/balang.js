@@ -17,7 +17,7 @@ router.get('/barang',(req,res,next)=>{
 
 
 router.post('/postBarang',(req,res,next)=>{
-  console.log(req);
+  console.log(req.body);
   let query = "insert into daftarBarang (nama, pemilik, lokasiBarang) values ('"+req.body.nama+"','"+req.body.pemilik+"','"+req.body.lokasiBarang+"')";
   console.log(query);
   knex.schema.raw(query).then(ress=>{
