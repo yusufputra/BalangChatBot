@@ -23,7 +23,10 @@
 
 const line = require('@line/bot-sdk');
 const express = require('express');
+<<<<<<< HEAD
 // const bodyParser = require("body-parser");
+=======
+>>>>>>> 53e684438104c3f2abb0469bc15f14ce74a3e553
 const axios = require('axios');
 const options = require('./db/connectionAzure');
 var knex = require('knex')(options);
@@ -44,8 +47,11 @@ const config = {
 const client = new line.Client(config);
 const app = express();
 
+<<<<<<< HEAD
 // app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(bodyParser);
+=======
+>>>>>>> 53e684438104c3f2abb0469bc15f14ce74a3e553
 app.use(volleyball);
 // app.use(express.json());
 app.use('/api',api);

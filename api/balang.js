@@ -15,6 +15,7 @@ router.get('/barang',(req,res,next)=>{
     })
 })
 
+<<<<<<< HEAD
 //body not detected :(
 
 router.post('/postBarang',(req,res,next)=>{
@@ -29,4 +30,6 @@ router.post('/postBarang',(req,res,next)=>{
   // })
 })
 
+=======
+>>>>>>> 53e684438104c3f2abb0469bc15f14ce74a3e553
 module.exports = router;

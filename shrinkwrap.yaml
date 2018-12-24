@@ -1,7 +1,10 @@
 dependencies:
   '@line/bot-sdk': 6.4.0
   axios: 0.18.0
+<<<<<<< HEAD
   body-parser: 1.18.3
+=======
+>>>>>>> 53e684438104c3f2abb0469bc15f14ce74a3e553
   cors: 2.8.5
   dotenv: 6.2.0
   express: 4.16.4
@@ -1916,7 +1919,10 @@ shrinkwrapVersion: 3
 specifiers:
   '@line/bot-sdk': ^6.4.0
   axios: ^0.18.0
+<<<<<<< HEAD
   body-parser: ^1.18.3
+=======
+>>>>>>> 53e684438104c3f2abb0469bc15f14ce74a3e553
   cors: ^2.8.5
   dotenv: ^6.2.0
   express: ^4.16.4
