@@ -68,6 +68,9 @@ function handleEvent(event) {
       const echo = { type: 'text', text: "Halo juga :)·" };
       return client.replyMessage(event.replyToken, echo);
     }
+    if(event.message.text == "barang"){
+      axios.get('/api/barang')
+    }
   
     if(event.message.text == "sayang kamu"){
       const echo = { type: 'text', text: "sayang kamu juga :)·" };
