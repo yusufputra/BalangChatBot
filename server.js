@@ -26,6 +26,7 @@ const express = require('express');
 const axios = require('axios');
 const options = require('./db/connectionAzure');
 var knex = require('knex')(options);
+const Line = require('messaging-api-line');
 
 
 const volleyball = require('volleyball');

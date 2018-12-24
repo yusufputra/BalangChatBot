@@ -17,6 +17,7 @@
     "express": "^4.16.4",
     "jsonwebtoken": "^8.4.0",
     "knex": "^0.16.3",
+    "messaging-api-line": "^0.7.15",
     "mssql": "^4.1.0",
     "mysql": "^2.16.0",
     "tedious": "^3.0.1",
