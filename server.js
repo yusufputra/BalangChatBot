@@ -26,7 +26,7 @@ const express = require('express');
 const axios = require('axios');
 const options = require('./db/connectionAzure');
 var knex = require('knex')(options);
-const Line = require('messaging-api-line');
+const {Line} = require('messaging-api-line');
 
 
 const volleyball = require('volleyball');
@@ -67,12 +67,21 @@ function handleEvent(event) {
    
     if(event.message.text == "hai"){
       const echo = { type: 'text', text: "Halo juga :)·" };
-      return client.replyMessage(event.replyToken, echo);
+      return client.replyMessage(event.replyToken, [
+        Line.createText('Hello'),
+        Line.createText('End'),
+      ]);
     }
   
     if(event.message.text == "barang"){
       let echo;
+      // {"id":1,"nama":"tas","pemilik":"supri","lokasiBarang":"bem"}
       axios.get('https://butter-mail.glitch.me/api/barang').then(function(res){
+        res.data.map(function(result){
+          return client.replyMessage(event.replyToken,[
+            Line.createText(result.nama + result.pemilik + result.lokasiBarang),
+          ]);
+        })
         console.log("hallo");
         console.log(res);
         return client.replyMessage(event.replyToken, res);
